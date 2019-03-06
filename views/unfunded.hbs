@@ -1,0 +1,34 @@
+<h1 style= "text-align: center"> Unfunded Projects</h1>
+
+<p style= "text-align: center">View:
+  <a class="btn btn-secondary" href="/"> All Projects </a>
+  <a class="btn btn-secondary" href="/funded"> Funded projects </a>
+</p>
+
+<!-- Part 1: View all projects -->
+<!-- YOUR CODE HERE -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><a href="/unfunded/?sort=title"> Name </a></th>
+      <th scope="col"><a href="/unfunded/?sort=start"> Start Date </a></th>
+      <th scope="col"><a href="/unfunded/?sort=end">End Date</a></th>
+      <th scope="col"><a href="/unfunded/?sort=goal">Goal</a></th>
+      <th scope="col"><a href="/unfunded/?sort=total_contributions">Amount Raised</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td> <a href="/project/{{this.id}}">{{this.title}}</a> </td>
+        <td>{{this.newStart}}</td>
+        <td>{{this.newEnd}}</td>
+        <td>${{this.goal}}</td>
+        <td>${{this.total_contributions}}</td>
+      </tr>
+    {{/each}}
+ </tbody>
+</table>
+<div style= "text-align: center">
+  <a class="btn btn-primary" href="http://localhost:3000/new"> Create new project </a>
+</div>
